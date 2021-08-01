@@ -1,0 +1,16 @@
+Ago, 1.
+
+- Resuming on the book, pg 25.
+  The command ruby bin/console, [1] pry(main)> Application['database']
+  returns: 
+
+  => #<Sequel::Postgres::Database: "postgresql://localhost/todo-api-development?user=postgres&password=postgres">
+
+  So I made an experiment: return the content of .env.development to "DATABASE_URL=postgres:///todo-api-development"
+  And tried:
+  [1] pry(main)> Application['database']
+
+  Error returned:
+
+  /home/luiz/.rvm/gems/ruby-3.0.0/gems/sequel-5.46.0/lib/sequel/adapters/postgres.rb:210:in `initialize': PG::ConnectionBad: fe_sendauth: no password supplied (Sequel::DatabaseConnectionError)
+
